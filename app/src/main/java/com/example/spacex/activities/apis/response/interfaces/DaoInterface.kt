@@ -12,9 +12,12 @@ import com.example.spacex.activities.apis.response.RocketsListResponseItem
 interface DaoInterface {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertItems(getUserRewardPointResponse: RocketsListResponseItem)
+    fun insertItems(rocketsListResponseItem: RocketsListResponse?)
 
     @Query("SELECT * FROM ROCKETSLISTRESPONSEITEM")
-    fun getAllDataSet(): LiveData<List<RocketsListResponseItem>>
+    fun getAllDataSet(): LiveData<List<RocketsListResponse>>
+
+    @Query("DELETE FROM RocketsListResponseItem")
+    fun deleteAll()
 
 }

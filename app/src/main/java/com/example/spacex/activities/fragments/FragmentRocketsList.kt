@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.spacex.R
+import com.example.spacex.activities.RoomDataBase.RocketListViewModel
 import com.example.spacex.activities.adapter.RocketListAdapter
 import com.example.spacex.activities.apis.response.RocketsListResponse
+import com.example.spacex.activities.apis.response.RocketsListResponseItem
 import com.example.spacex.activities.apis.response.interfaces.ApiInterface
 import com.example.spacex.databinding.FragmentRocketsListBinding
 import retrofit2.Call
@@ -23,6 +26,7 @@ class FragmentRocketsList : Fragment() {
     private lateinit var binding: FragmentRocketsListBinding
     private lateinit var rocketsListResponse: RocketsListResponse
     private lateinit var rocketListAdapter: RocketListAdapter
+    private val rocketListViewModel : RocketListViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,6 +54,7 @@ class FragmentRocketsList : Fragment() {
                         Toast.makeText(context,"Data fetch successfully",Toast.LENGTH_SHORT).show()
                         Log.e("API RESPONSE", response.body().toString())
                         val rocketsListResponse = response.body()
+                   //     rocketListViewModel.insertData(rocketsListResponse)
                         binding.shimmerMainContent.visibility = View.GONE
                         binding.rocketsList.visibility = View.VISIBLE
                         rocketListAdapter = RocketListAdapter(rocketsListResponse,context)
