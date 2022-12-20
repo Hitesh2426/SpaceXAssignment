@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:translationZ="@dimen/_15sdp"
+    android:paddingHorizontal="@dimen/_15sdp"
+    android:paddingVertical="@dimen/_15sdp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTv"
+        android:gravity="center"
+        android:fontFamily="@font/font_medium"
+        android:textColor="#414346"
+        android:textSize="@dimen/_18ssp"
+        android:paddingHorizontal="@dimen/_50sdp"
+        android:text="@string/rockets_list"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

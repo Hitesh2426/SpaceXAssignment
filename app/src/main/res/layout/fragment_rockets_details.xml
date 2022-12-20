@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/custom_header"
+        android:id="@+id/headerView"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/headerView"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nameHeadTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/_18ssp"
+        android:fontFamily="@font/font_semibold"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameHeadTxt"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_margin="@dimen/_5sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/adapter_images"
+    />
+
+    <TextView
+        android:id="@+id/descriptionTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view_pager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/font_regular"
+        android:padding="@dimen/_5sdp"
+        android:text="Starship and Super Heavy Rocket represent a fully reusable transportation system designed to service all Earth orbit needs as well as the Moon and Mars. This two-stage vehicle — composed of the Super Heavy rocket (booster) and Starship (ship) — will eventually replace Falcon 9, Falcon Heavy and Dragon."
+        android:textSize="@dimen/_12sdp"/>
+
+            <TextView
+                android:id="@+id/activeStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@id/descriptionTxt"
+                app:layout_constraintEnd_toStartOf="@id/statusCheck"
+                android:text="Active Status"
+                android:fontFamily="@font/font_semibold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/statusCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toTopOf="@id/heightHeadTxt"
+                app:layout_constraintBottom_toBottomOf="@id/heightHeadTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/font_regular"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/heightHeadTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/height"
+        android:fontFamily="@font/font_semibold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/heightTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/heightHeadTxt"
+        app:layout_constraintBottom_toBottomOf="@id/heightHeadTxt"
+        android:text="@string/_266_7feet"
+        app:layout_constraintStart_toEndOf="@id/heightHeadTxt"
+        android:fontFamily="@font/font_regular"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/diameterHeadTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/heightHeadTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/diameter"
+        android:fontFamily="@font/font_semibold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:id="@+id/diameterTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/diameterHeadTxt"
+        app:layout_constraintBottom_toBottomOf="@id/diameterHeadTxt"
+        android:text="@string/_39_9_feet"
+        app:layout_constraintStart_toEndOf="@id/diameterHeadTxt"
+        android:fontFamily="@font/font_regular"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/costHeadTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/diameterHeadTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/cost"
+        android:fontFamily="@font/font_semibold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:id="@+id/costTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/costHeadTxt"
+        app:layout_constraintBottom_toBottomOf="@id/costHeadTxt"
+        android:text="@string/_700000"
+        app:layout_constraintStart_toEndOf="@id/costHeadTxt"
+        android:fontFamily="@font/font_regular"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/successRateHeadTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/costHeadTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/success_rate"
+        android:fontFamily="@font/font_semibold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:id="@+id/successRateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/successRateHeadTxt"
+        app:layout_constraintBottom_toBottomOf="@id/successRateHeadTxt"
+        android:text="@string/_100"
+        app:layout_constraintStart_toEndOf="@id/successRateHeadTxt"
+        android:fontFamily="@font/font_regular"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/wikipediaHeadTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/successRateHeadTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="@string/wikipedia"
+                android:fontFamily="@font/font_semibold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                />
+
+            <TextView
+                android:id="@+id/wikipediaTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toTopOf="@id/wikipediaHeadTxt"
+                app:layout_constraintBottom_toBottomOf="@id/wikipediaHeadTxt"
+                android:text="https://en.wikipedia.org/wiki/Falcon_Heavy"
+                app:layout_constraintStart_toEndOf="@id/wikipediaHeadTxt"
+                android:fontFamily="@font/font_regular"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

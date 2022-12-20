@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SpaceX</string>
+    <string name="spacex">SPACE X</string>
+    <string name="rockets_list">Rockets List</string>
+    <string name="cost">Cost :</string>
+    <string name="_39_9_feet">39.9 feet</string>
+    <string name="diameter">Diameter :</string>
+    <string name="_266_7feet">266.7feet</string>
+    <string name="height">Height :</string>
+    <string name="_700000">700000</string>
+    <string name="_100">100</string>
+    <string name="success_rate">Success Rate :</string>
+    <string name="wikipedia">Wikipedia :</string>
+</resources>
